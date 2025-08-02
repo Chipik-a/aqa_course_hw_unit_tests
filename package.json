@@ -2,7 +2,7 @@
   "name": "aqa_course_hw_unit_tests",
   "version": "1.0.0",
   "description": "",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "hw-5-1": "jest tests/js/hw-5/task-1.test.js",
     "hw-5-2": "jest tests/js/hw-5/task-2.test.js",

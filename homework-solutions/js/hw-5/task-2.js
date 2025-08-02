@@ -17,16 +17,9 @@
  * 100 - делится на 5
 //  */
 
-
-
-
 function getFizzBuzzResult() {
     let result = '';
     for (let i = 1; i <= 100; i++) {
-        if (typeof i !== 'number' || isNaN(i)) {
-            result(`${i} is not a number\n`);
-            continue;
-        } 
         
         if ((i % 3 === 0) && (i % 5 === 0)) {
             result += `${i} - делится и на 3 и на 5\n`;
@@ -42,5 +35,5 @@ function getFizzBuzzResult() {
 }
 let fizzBuzzResult = getFizzBuzzResult();
 
-module.exports =  { fizzBuzzResult };
+export { fizzBuzzResult };
 

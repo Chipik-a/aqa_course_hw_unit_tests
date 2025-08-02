@@ -7,18 +7,17 @@
 const word = 'hello';
 
 function letterIndices(word) {
-    const vowels = 'aeiouAEIOU';
+    const vowels = 'aeiou';
+    const consonants = 'bcdfghjklmnpqrstvwxz';
+    const lowerCaseWord = word.toLowerCase();
 
     let vowelsCount = 0;
     let consonantsCount = 0;
 
-    for (let i = 0; i < word.length; i++){
-        if (word[i].toLowerCase() === word[i].toUpperCase()) {
-            continue;
-        }
-        if(vowels.includes(word[i])) {
+    for (let i = 0; i < lowerCaseWord.length; i++){
+        if(vowels.includes(lowerCaseWord[i])) {
             vowelsCount++;
-        } else {
+        } else if (consonants.includes(lowerCaseWord[i])){
             consonantsCount++;
         }
     }
@@ -27,4 +26,4 @@ function letterIndices(word) {
 
 let vowelsAndConsonantsResult = letterIndices(word);
 
-module.exports = { vowelsAndConsonantsResult };
+export { vowelsAndConsonantsResult };
