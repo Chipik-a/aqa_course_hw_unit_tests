@@ -14,11 +14,12 @@
 */
 
 let resultUnique = [];
-let resultNull = null;
+let resultNull;
 
 const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai']
 const myPizzasT1 = ['Peperoni', 'Margherita', 'Diablo', 'Vegetarian'];
 const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
+
 
 const myPizzasT1Lower = [];
 const myPizzasT2Lower = [];
@@ -38,7 +39,7 @@ for (const item of competitorPizzas) {
 
 for (let i = 0; i < myPizzasT1Lower.length; i++) {
   if(!competitorPizzasLower.includes(myPizzasT1Lower[i])) {
-    resultUnique.push(myPizzasT1[i])
+    resultUnique.push(myPizzasT1[i]) 
   } else {
     resultNull = null;
 }
@@ -52,25 +53,12 @@ for (let i = 0; i < myPizzasT2Lower.length; i++) {
   }
  }
  
+if (resultUnique.length === 0) {
+  resultNull = null;
+}
+
  console.log(resultUnique);
  console.log(resultNull);
 
 export { resultNull, resultUnique };
 
-
-
-// for (const item of myPizzasT1Lower) {
-//   if (!competitorPizzasLower.includes(item)) {
-//     resultUnique.push(item)
-//   } 
-// } console.log(resultUnique);
-
-// if (resultUnique.length === 0) {
-//   resultNull = null;
-// } console.log(resultNull);
-
-// for (const item of myPizzasT2Lower) {
-//   if (!competitorPizzasLower.includes(item)) {
-//     resultUnique.push(item)
-//   }
-//   } console.log(resultUnique);
