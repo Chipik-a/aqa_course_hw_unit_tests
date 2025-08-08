@@ -5,9 +5,15 @@
   - Например: mergeArrays([1,2], [3,4], [5,6]) // [1,2,3,4,5,6]
   - Решить с использованием Spread operator
 */
-function mergeArrays() {
-  // Ваш код
-}
+function mergeArrays(a, b, c) {
+  const newMergeArrays = [...a, ...b, ...c]
+  
+  return newMergeArrays;
+} 
+
+const result = mergeArrays([1,2], [3,4], [5,6])
+console.log(result);
+
 /*
   2. Devide by _
     - Написать функцию, которая преобразует любое предложение в вот_Такой_Вот_Вид и возвращает его. 
@@ -15,8 +21,14 @@ function mergeArrays() {
     - Пример: I am super engineer => i_Am_Super_Engineer
   */
 function devideBy(sentence) {
-  // Ваш код
+      let newSentence = sentence.split(' ');
+
+      // newSentence = sentence.replaceAll(' ', '_');
+      return newSentence
 }
+
+console.log(devideBy('I am super engineer'))
+
 /*
   3. Фибаначчи
     - Напишите функцию fibonacci(n), возвращающую энное число Фибоначчи
