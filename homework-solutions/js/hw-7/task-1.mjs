@@ -5,14 +5,14 @@
   - Например: mergeArrays([1,2], [3,4], [5,6]) // [1,2,3,4,5,6]
   - Решить с использованием Spread operator
 */
-function mergeArrays(a, b, c) {
-  const newMergeArrays = [...a, ...b, ...c]
-  
+function mergeArrays(...arrays) {
+  const newMergeArrays = [].concat(...arrays);
+  //return [].concat(...mergeArrays)
   return newMergeArrays;
 } 
 
 const result = mergeArrays([1,2], [3,4], [5,6])
-console.log(result);
+//console.log(result);
 
 /*
   2. Devide by _
@@ -21,13 +21,24 @@ console.log(result);
     - Пример: I am super engineer => i_Am_Super_Engineer
   */
 function devideBy(sentence) {
-      let newSentence = sentence.split(' ');
 
-      // newSentence = sentence.replaceAll(' ', '_');
-      return newSentence
-}
+  if(!sentence.trim()) return ''; 
 
-console.log(devideBy('I am super engineer'))
+  const words = sentence.trim().split(' ').filter(word => word !== ''); //[ 'I', 'am', 'super', 'engineer' ]
+  const transformed = words.map((word, index) => {
+      return index === 0 
+      ? word[0].toLowerCase() + word.slice(1).toLowerCase() 
+      : word[0].toUpperCase() + word.slice(1).toLowerCase();
+
+    // if(index === 0) {
+    //   return word[0].toLowerCase() + word.slice(1);
+    // } else {
+    //   return word[0].toUpperCase() + word.slice(1);
+    // }
+  }); return transformed.join('_');
+  }
+    
+//console.log(devideBy('I am super engineer'))
 
 /*
   3. Фибаначчи
@@ -38,7 +49,31 @@ console.log(devideBy('I am super engineer'))
     - Например fibonacci(8) //21
   */
 function fibonacci(n) {
-  // Ваш код
+
+  if (n < 0) {
+    throw new Error('n must be a positive number');
+  }
+  if (n === 0) {
+    return 0;
+  }
+  if (n === 1) {
+    return 1;
+  }
+  // if (n < 0) 
+  //   {
+  //     throw new Error('n must be a positive number');
+  //   }
+  // if (n === 0) return 0;
+  // if (n === 1) return 1;
+
+  const fib = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib[n];
+
+  //return fibonacci(n - 1) + fibonacci(n - 2)
 }
+
 
 export { mergeArrays, fibonacci, devideBy };
