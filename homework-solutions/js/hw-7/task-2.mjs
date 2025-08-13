@@ -30,26 +30,45 @@ function isPalindrom(word) {
  Если таких слов несколько - возвращает их все.
 */
 
-function findLongestWords(sentence) {
-  if(typeof sentence !== 'string' || sentence.trim() === '') {
-    return [];
-  }
+// function findLongestWords(sentence) {
+//   if(typeof sentence !== 'string' || sentence.trim() === '') {
+//     return [];
+//   }
 
-  let words = sentence.trim().split(' ');
-  let longestWord = [];
-  let maxLength = 0;
+//   let words = sentence.trim().split(' ');
+//   let longestWord = [];
+//   let maxLength = 0;
 
-    for (let i = 0; i < words.length; i++) {
-      if(words[i].length > maxLength) {
-        maxLength = words[i].length;
-        longestWord = [words[i]];
+//     for (let i = 0; i < words.length; i++) {
+//       if(words[i].length > maxLength) {
+//         maxLength = words[i].length;
+//         longestWord = [words[i]];
+//       }
+//       else if(words[i].length === maxLength) {
+//         longestWord.push(words[i]);
+//       }
+//     } return longestWord;
+
+// } 
+
+
+function findLongestWords(sentence) { 
+    if(typeof sentence !== 'string' || sentence.trim() === '') {
+        return [];
       }
-      else if(words[i].length === maxLength) {
-        longestWord.push(words[i]);
-      }
-    } return longestWord;
 
-} 
-  //console.log(findLongestWords('i am try to write a function and function'))
+      let words = sentence.trim().split(' ').filter(word => word !== '');
+      let maxLength = 0;
+      
+      words.map(word => {
+        if(word.length > maxLength) {
+          maxLength = word.length
+        }
+      });
+      return words.filter(word => word.length === maxLength);
+
+      }
+
+  console.log(findLongestWords('i am try to write a function and function'))
 
 export { isPalindrom, findLongestWords };
