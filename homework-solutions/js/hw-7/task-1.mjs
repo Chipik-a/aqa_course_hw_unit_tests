@@ -59,12 +59,6 @@ function fibonacci(n) {
   if (n === 1) {
     return 1;
   }
-  // if (n < 0) 
-  //   {
-  //     throw new Error('n must be a positive number');
-  //   }
-  // if (n === 0) return 0;
-  // if (n === 1) return 1;
 
   const fib = [0, 1];
   for (let i = 2; i <= n; i++) {
@@ -72,7 +66,7 @@ function fibonacci(n) {
   }
   return fib[n];
 
-  //return fibonacci(n - 1) + fibonacci(n - 2)
+  //return fibonacci(n - 1) + fibonacci(n - 2) //так зависает тест
 }
 
 
