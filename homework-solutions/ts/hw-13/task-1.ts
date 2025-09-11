@@ -6,12 +6,12 @@
     - Массив строк: переменная cities, значения ["Minsk", "Warsaw", "London"].
     - Объект: переменная person, объект с полями name: "Alice", age: 30, city: "Minsk".*/
 
-let num1: number = 42;
-let str: string = 'Hello, TypeScript!';
-let isComplete: boolean = true;
-let numbers: number[] = [1, 2, 3, 4, 5];
-let cities: Array<string> = ["Minsk", "Warsaw", "London"];
-let person: {name: string; age: number; city: string} = {
+const num1: number = 42;
+const str: string = 'Hello, TypeScript!';
+const isComplete: boolean = true;
+const numbers: number[] = [1, 2, 3, 4, 5];
+const cities: Array<string> = ["Minsk", "Warsaw", "London"];
+const person: {name: string; age: number; city: string} = {
     name: 'Alice',
     age: 30,
     city: 'Minsk'
@@ -34,18 +34,18 @@ type Grade = 'junior' | 'middle' | 'senior';
     - model (строка),
     - опциональное поле year (число).*/
 
-interface Car {
+interface ICar {
     brand: string;
     model: string;
     year?: number;
 }
-let car: Car = {
+const car: ICar = {
     brand: 'Toyota',
     model: 'Corolla',
     year: 2020
 };
 
-let oldCar: Car = {
+const oldCar: ICar = {
     brand: 'Chevrolet',
     model: 'Bel Air',
 };
@@ -54,13 +54,13 @@ let oldCar: Car = {
     - Интерфейса Address с полями street (строка), city (строка), и zipCode (число).
     - Интерфейса FullAddress, который наследует интерфейс Address и добавляет поле country (строка).*/
 
-interface Address {
+interface IAddress {
     street: string;
     city: string;
     zipCode: number;
 }
 
-interface FullAddress extends Address {
+interface IFullAddress extends IAddress {
     country: string;
 }
   
